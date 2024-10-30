@@ -14,11 +14,37 @@ interface Item {
 }
 
 const availableItems: Item[] = [
-  { name: "Catnip", cost: 10, rate: 0.1, description: "A bit of catnip increases purrs by 0.1 per second." },
-  { name: "Scratching Post", cost: 100, rate: 2, description: "A scratching post increases purrs by 2 per second." },
-  { name: "Yarn Ball", cost: 1000, rate: 50, description: "A yarn ball increases purrs by 50 per second." },
-  { name: "Orange Cat", cost: 5000, rate: 100, description: "You notice that more cats are beginning to surround you." },
-  { name: "Black Cat", cost: 10000, rate: 250, description: "The mystical Black Cat appears, significantly boosting purrs." }
+  {
+    name: "Catnip",
+    cost: 10,
+    rate: 0.1,
+    description: "A bit of catnip increases purrs by 0.1 per second.",
+  },
+  {
+    name: "Scratching Post",
+    cost: 100,
+    rate: 2,
+    description: "A scratching post increases purrs by 2 per second.",
+  },
+  {
+    name: "Yarn Ball",
+    cost: 1000,
+    rate: 50,
+    description: "A yarn ball increases purrs by 50 per second.",
+  },
+  {
+    name: "Orange Cat",
+    cost: 5000,
+    rate: 100,
+    description: "You notice that more cats are beginning to surround you.",
+  },
+  {
+    name: "Black Cat",
+    cost: 10000,
+    rate: 250,
+    description:
+      "The mystical Black Cat appears, significantly boosting purrs.",
+  },
 ];
 
 const button = document.createElement("button");
@@ -60,7 +86,9 @@ function updateCount() {
 
 function updateShopButtons() {
   availableItems.forEach((item, index) => {
-    const shopButton = document.getElementById(`shopButton-${index}`) as HTMLButtonElement;
+    const shopButton = document.getElementById(
+      `shopButton-${index}`,
+    ) as HTMLButtonElement;
     shopButton.disabled = Math.round(counter) < item.cost;
   });
 }
